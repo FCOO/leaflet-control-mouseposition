@@ -1,0 +1,39 @@
+{
+  "name": "leaflet-control-mouseposition",
+  "version": "0.1.0",
+  "homepage": "https://github.com/FCOO/leaflet-control-mouseposition",
+  "authors": [
+    "NielsHolt"
+  ],
+  "description": "",
+  "main": [
+    "dist/leaflet-control-mouseposition.min.js",
+    "dist/leaflet-control-mouseposition.min.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/FCOO/leaflet-control-mouseposition.git"
+  },
+  "dependencies": {
+    "jquery": "latest",
+    "leaflet": "latest",
+    "leaflet-latlng-format": "fcoo/leaflet-latlng-format#latest",
+    "leaflet-mouseposition": "fcoo/leaflet-mouseposition#latest"
+  },
+  "devDependencies": {
+    "bourbon": "latest",
+    "modernizr-mixin": "latest",
+    "mathsass": "latest"
+  },
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "moduleType": [
+    "es6"
+  ]
+}
