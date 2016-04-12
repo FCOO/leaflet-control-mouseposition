@@ -3,7 +3,7 @@
 
 
 ## Description
-# Leaflet.MousePosition
+
 leaflet-control-mouseposition is a control that displays geographic coordinates of the mouse pointer, as it is moved about the map and when the map is moved 'under' the mouse
 
 The format of the position changes when the user click on the control
@@ -21,7 +21,9 @@ http://FCOO.github.io/leaflet-control-mouseposition/demo/
 
 ## Usage
 	L.control.mouseposition(options).addTo(map);
+or
 
+	var map = L.Map('map', {mousepositionControl: true});
 
 
 ### options

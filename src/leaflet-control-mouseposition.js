@@ -48,6 +48,21 @@
 
 	});
 
+	//Extend the options for Leaflet Map
+	L.Map.mergeOptions({
+    mousepositionControl: false
+	});
+
+	L.Map.addInitHook(function () {
+		if (this.options.mousepositionControl) {
+			this.mousepositionControl = new L.Control.Mouseposition();
+			this.addControl(this.mousepositionControl);
+    }
+	});
+	
+	
+	
+	
 	L.control.mouseposition = function (options) {
     return new L.Control.Mouseposition(options);
 	};

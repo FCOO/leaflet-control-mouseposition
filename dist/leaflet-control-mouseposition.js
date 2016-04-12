@@ -12,7 +12,7 @@
 
 	L.Control.Mouseposition = L.Control.extend({
 		options: {
-			VERSION	: "0.1.0",
+			VERSION	: "0.2.0",
 			position: 'bottomleft',
 			title		: 'Click to change format'
 		},
@@ -48,6 +48,21 @@
 
 	});
 
+	//Extend the options for Leaflet Map
+	L.Map.mergeOptions({
+    mousepositionControl: false
+	});
+
+	L.Map.addInitHook(function () {
+		if (this.options.mousepositionControl) {
+			this.mousepositionControl = new L.Control.Mouseposition();
+			this.addControl(this.mousepositionControl);
+    }
+	});
+	
+	
+	
+	
 	L.control.mouseposition = function (options) {
     return new L.Control.Mouseposition(options);
 	};
