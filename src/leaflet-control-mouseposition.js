@@ -41,7 +41,7 @@
 		},
 
 		_onClick: function () {
-			L.LatLng.setFormat( (L.LatLng.format.options.formatId + 1) % (L.LatLng.FORMAT_DD + 1) );
+			L.LatLng.changeFormat();
 			this._onMouseposition( this.mouseEvent );
 		}
 
