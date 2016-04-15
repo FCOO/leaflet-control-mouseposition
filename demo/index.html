@@ -28,8 +28,10 @@
        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors</a>'
      }).addTo(map);
 
+		map.on('latlngformatchange', function( data ){
+			console.log( data.format.options );
+		});
 
-//		L.control.mouseposition( {position: 'bottomleft'} ).addTo(map);
 	</script>
 </body>
 </html>

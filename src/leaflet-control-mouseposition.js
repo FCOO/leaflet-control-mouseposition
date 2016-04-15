@@ -41,7 +41,7 @@
 		},
 
 		_onClick: function () {
-			L.LatLng.changeFormat();
+			L.LatLng.changeFormat( this._map );
 			this._onMouseposition( this.mouseEvent );
 		}
 

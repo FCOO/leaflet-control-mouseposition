@@ -12,7 +12,7 @@
 
 	L.Control.Mouseposition = L.Control.extend({
 		options: {
-			VERSION	: "0.2.1",
+			VERSION	: "0.3.0",
 			position: 'bottomleft',
 			title		: 'Click to change format'
 		},
@@ -41,7 +41,7 @@
 		},
 
 		_onClick: function () {
-			L.LatLng.changeFormat();
+			L.LatLng.changeFormat( this._map );
 			this._onMouseposition( this.mouseEvent );
 		}
 
