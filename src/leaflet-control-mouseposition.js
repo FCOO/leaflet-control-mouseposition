@@ -18,7 +18,7 @@
 		},
 
 	  onAdd: function (map) {
-		  this._container = L.DomUtil.create('div', 'leaflet-control-mouseposition');
+		  this._container = L.DomUtil.create('div', 'leaflet-control-mouseposition empty');
 			this._container.title = this.options.title;
 			L.DomEvent.disableClickPropagation(this._container);
 
@@ -33,11 +33,23 @@
 	  },
 
 		_onMouseposition: function ( mouseEvent ) {
+			if ((this.mouseEvent ? this.mouseEvent.latlng : null) != (mouseEvent ? mouseEvent.latlng : null)){
+				if (mouseEvent && mouseEvent.latlng)
+					L.DomUtil.removeClass( this._container, 'empty');
+				else
+					L.DomUtil.addClass( this._container, 'empty');
+
+			}
 			this.mouseEvent = mouseEvent;
+			if (mouseEvent && mouseEvent.latlng)
+				this._container.innerHTML = mouseEvent.latlng.asFormat().join('&nbsp;&nbsp;&nbsp;');
+
+/*
 			this._container.innerHTML =
 				mouseEvent && mouseEvent.latlng ?
 				mouseEvent.latlng.asFormat().join('&nbsp;&nbsp;&nbsp;') :
 				'';
+*/
 		},
 
 		_onClick: function () {
@@ -59,10 +71,10 @@
 			this.addControl(this.mousepositionControl);
     }
 	});
-	
-	
-	
-	
+
+
+
+
 	L.control.mouseposition = function (options) {
     return new L.Control.Mouseposition(options);
 	};
