@@ -7,8 +7,8 @@
   ],
   "description": "",
   "main": [
-    "dist/leaflet-control-mouseposition.min.js",
-    "dist/leaflet-control-mouseposition.min.css"
+    "dist/leaflet-control-mouseposition.js",
+    "dist/leaflet-control-mouseposition.css"
   ],
   "repository": {
     "type": "git",
