@@ -12,64 +12,63 @@
 
     L.Control.Mouseposition = L.Control.extend({
         options: {
-            VERSION : "0.3.3",
-            position: 'bottomleft',
-            title   : 'Click to change format'
+            VERSION : "1.0.0",
+            position: 'bottomleft'
         },
 
-        onAdd: function (map) {
-            this._container = L.DomUtil.create('div', 'leaflet-control-mouseposition empty');
-            this._container.title = this.options.title;
-            L.DomEvent.disableClickPropagation(this._container);
-
+        onAdd: function (map) { 
             map.on('mouseposition', this._onMouseposition, this);
-            L.DomEvent.on(this._container, 'click', this._onClick, this);
 
-            return this._container;
+            var result = L.DomUtil.create('div', 'leaflet-control-mouseposition-outer hidden');
+
+            result.append( L.DomUtil.create('div', 'leaflet-control-mouseposition-background') );
+
+            this.textElement = L.DomUtil.create('div', 'leaflet-control-mouseposition');
+            result.append( this.textElement );
+
+            this.outerElement = result; 
+           
+            return result; 
         },
 
         onRemove: function (map) {
             map.off('mouseposition', this._onMouseposition);
         },
 
+        onClick: function( func, context ){
+            L.DomUtil.addClass( this._container, 'leaflet-control-mouseposition-clickable' );
+            L.DomEvent.disableClickPropagation( this.outerElement );
+            L.DomEvent.addListener( this.outerElement, 'click', func, context );
+        },
+
         _onMouseposition: function ( mouseEvent ) {
             if ((this.mouseEvent ? this.mouseEvent.latlng : null) != (mouseEvent ? mouseEvent.latlng : null)){
                 if (mouseEvent && mouseEvent.latlng)
-                    L.DomUtil.removeClass( this._container, 'empty');
+                    L.DomUtil.removeClass( this._container, 'hidden');
                 else
-                    L.DomUtil.addClass( this._container, 'empty');
+                    L.DomUtil.addClass( this._container, 'hidden');
 
             }
             this.mouseEvent = mouseEvent;
             if (mouseEvent && mouseEvent.latlng)
-                this._container.innerHTML = mouseEvent.latlng.format().join('&nbsp;&nbsp;&nbsp;');
-        },
-
-        _onClick: function () {
-            L.LatLng.changeFormat( this._map );
-            this._onMouseposition( this.mouseEvent );
+                this.textElement.innerHTML = mouseEvent.latlng.format().join('&nbsp;&nbsp;&nbsp;');
         }
-
-
     });
 
     //Extend the options for Leaflet Map
     L.Map.mergeOptions({
-    mousepositionControl: false
+        mousepositionControl: false
     });
 
     L.Map.addInitHook(function () {
         if (this.options.mousepositionControl) {
             this.mousepositionControl = new L.Control.Mouseposition();
             this.addControl(this.mousepositionControl);
-    }
+        }
     });
 
-
-
-
-    L.control.mouseposition = function (options) {
-    return new L.Control.Mouseposition(options);
+    L.Control.mouseposition = function (options) {
+        return new L.Control.Mouseposition(options);
     };
 
 }(L, this, document));

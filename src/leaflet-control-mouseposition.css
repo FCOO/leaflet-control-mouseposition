@@ -1,26 +1,40 @@
 /***********************************************
-	leaflet-control-mouseposition.scss, 
+    leaflet-control-mouseposition.scss, 
 
-	(c) 2016, FCOO
+    (c) 2016, FCOO
 
-	https://github.com/FCOO/leaflet-control-mouseposition
-	https://github.com/FCOO
+    https://github.com/FCOO/leaflet-control-mouseposition
+    https://github.com/FCOO
 
 
 ************************************************/
-.leaflet-container .leaflet-control-mouseposition {
-  background-color: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 0.3125rem #bbb;
-  padding: 0.125rem 0.3125rem;
+.leaflet-container .leaflet-control-mouseposition-outer {
   margin: 0;
-  color: #333;
-  font: 0.6875rem "Helvetica Neue", Arial, Helvetica, sans-serif;
-  height: 0.6875rem;
-  line-height: 1;
-  border: 1px solid transparent;
-  cursor: pointer; }
-  .leaflet-container .leaflet-control-mouseposition.empty {
+  cursor: inherit; }
+  .leaflet-container .leaflet-control-mouseposition-outer.leaflet-control-mouseposition-clickable {
+    cursor: default; }
+  .leaflet-container .leaflet-control-mouseposition-outer.hidden {
     visibility: hidden; }
-  .leaflet-container .leaflet-control-mouseposition:hover {
-    border: 1px solid black;
-    background-color: rgba(255, 255, 255, 0.95); }
+  .leaflet-container .leaflet-control-mouseposition-outer .leaflet-control-mouseposition-background {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background-color: white;
+    border: 1px solid white; }
+  .leaflet-container .leaflet-control-mouseposition-outer.leaflet-control-mouseposition-clickable:hover .leaflet-control-mouseposition-background {
+    opacity: 0.7;
+    border: 1px solid black; }
+  .leaflet-container .leaflet-control-mouseposition-outer .leaflet-control-mouseposition {
+    position: relative;
+    z-index: 1;
+    padding: 0.125rem 0.3125rem;
+    margin: 0;
+    color: black;
+    font: 0.6875rem "Helvetica Neue", Arial, Helvetica, sans-serif;
+    height: 0.6875rem;
+    line-height: 1; }

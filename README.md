@@ -20,19 +20,21 @@ Using [fcoo/leaflet-latlng-format](https://github.com/FCOO/leaflet-latlng-format
 http://FCOO.github.io/leaflet-control-mouseposition/demo/ 
 
 ## Usage
-	L.control.mouseposition(options).addTo(map);
+	L.Control.mouseposition(options).addTo(map);
 or
 
 	var map = L.Map('map', {mousepositionControl: true});
 
 
-### options
+## options
 | Id | Type | Default | Description |
 | :--: | :--: | :-----: | --- |
 | `position` | string | `"bottomleft"` |  The standard Leaflet.Control position parameter |
-| title | string | `"Click to change format"` | The title when the control is hovered |
 
+## Properties and methods
+	.outerElement //DOM-element that contains the mouseposition. (Same as `_container`)
 
+	.onClick( func, context ) //Add click-event to the mouseposition. Change style on mouse hover to border and less transparent 
 
 
 ## Copyright and License
