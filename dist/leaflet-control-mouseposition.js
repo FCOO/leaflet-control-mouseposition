@@ -12,7 +12,7 @@
 
     L.Control.Mouseposition = L.Control.extend({
         options: {
-            VERSION : "1.0.0",
+            VERSION : "1.0.1",
             position: 'bottomleft'
         },
 
