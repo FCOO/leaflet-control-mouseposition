@@ -12,7 +12,7 @@
 
     L.Control.Mouseposition = L.Control.extend({
         options: {
-            VERSION : "1.0.2",
+            VERSION : "1.0.3",
             position: 'bottomleft'
         },
 
@@ -24,7 +24,7 @@
             //result.append( L.DomUtil.create('div', 'leaflet-control-mouseposition-background') );
 
             this.textElement = L.DomUtil.create('div', 'leaflet-control-mouseposition');
-            result.append( this.textElement );
+            result.appendChild( this.textElement );
 
             this.outerElement = result; 
            

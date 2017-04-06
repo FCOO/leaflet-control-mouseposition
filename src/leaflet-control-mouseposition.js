@@ -24,7 +24,7 @@
             //result.append( L.DomUtil.create('div', 'leaflet-control-mouseposition-background') );
 
             this.textElement = L.DomUtil.create('div', 'leaflet-control-mouseposition');
-            result.append( this.textElement );
+            result.appendChild( this.textElement );
 
             this.outerElement = result; 
            
