@@ -1,5 +1,5 @@
 /***********************************************
-    leaflet-control-mouseposition.scss, 
+    leaflet-control-mouseposition.scss,
 
     (c) 2016, FCOO
 
@@ -8,8 +8,8 @@
 
 
 ************************************************/
-//BOURBON - http://bourbon.io/
-@import "../bower_components/bourbon/app/assets/stylesheets/bourbon";
+//BOURBON - http://bourbon.io/ version 5
+@import "../bower_components/bourbon/core/bourbon";
 
 //MODERNIZR-MIXIN - https://github.com/danielguillan/modernizr-mixin
 @import "../bower_components/modernizr-mixin/stylesheets/modernizr";
@@ -23,13 +23,13 @@
         cursor  : inherit;
         box-sizing: border-box;
         padding  : 0;
-    
+
         background-color: rgba(255, 255, 255, .5);
         border: 1px solid white;
 
-        &.leaflet-control-mouseposition-clickable {        
+        &.leaflet-control-mouseposition-clickable {
             cursor: default;
-            &:hover {        
+            &:hover {
                 background-color: rgba(255, 255, 255, .8);
                 border: 1px solid black;
             }

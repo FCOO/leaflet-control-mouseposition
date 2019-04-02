@@ -12,11 +12,11 @@
 
     L.Control.Mouseposition = L.Control.extend({
         options: {
-            VERSION : "1.0.3",
+            VERSION : "1.1.0",
             position: 'bottomleft'
         },
 
-        onAdd: function (map) { 
+        onAdd: function (map) {
             map.on('mouseposition', this._onMouseposition, this);
 
             var result = L.DomUtil.create('div', 'leaflet-control-mouseposition-outer hidden');
@@ -26,9 +26,9 @@
             this.textElement = L.DomUtil.create('div', 'leaflet-control-mouseposition');
             result.appendChild( this.textElement );
 
-            this.outerElement = result; 
-           
-            return result; 
+            this.outerElement = result;
+
+            return result;
         },
 
         onRemove: function (map) {
@@ -51,7 +51,7 @@
             }
             this.mouseEvent = mouseEvent;
             if (mouseEvent && mouseEvent.latlng)
-                this.textElement.innerHTML = mouseEvent.latlng.format().join('&nbsp;&nbsp;&nbsp;');
+                this.textElement.innerHTML = mouseEvent.latlng.format({separator:'&nbsp;&nbsp;&nbsp;'});
         }
     });
 

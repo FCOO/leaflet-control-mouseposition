@@ -1,5 +1,5 @@
 /***********************************************
-    leaflet-control-mouseposition.scss, 
+    leaflet-control-mouseposition.scss,
 
     (c) 2016, FCOO
 
@@ -25,9 +25,9 @@
   .leaflet-container .leaflet-control-mouseposition-outer .leaflet-control-mouseposition {
     position: relative;
     z-index: 1;
-    padding: 0.125rem 0.3125rem;
+    padding: rem(2px) rem(5px);
     margin: 0;
     color: black;
-    font: 0.6875rem "Helvetica Neue", Arial, Helvetica, sans-serif;
-    height: 0.6875rem;
+    font: rem(11px) "Helvetica Neue", Arial, Helvetica, sans-serif;
+    height: rem(11px);
     line-height: 1; }

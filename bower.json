@@ -1,6 +1,6 @@
 {
   "name": "leaflet-control-mouseposition",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "homepage": "https://github.com/FCOO/leaflet-control-mouseposition",
   "authors": [
     "NielsHolt"
@@ -17,7 +17,7 @@
   "dependencies": {
     "jquery": "latest",
     "leaflet": "latest",
-    "leaflet-latlng-format": "fcoo/leaflet-latlng-format#^1.0.0",
+    "leaflet-latlng-format": "fcoo/leaflet-latlng-format#^2.0.0",
     "leaflet-mouseposition": "fcoo/leaflet-mouseposition#latest"
   },
   "devDependencies": {

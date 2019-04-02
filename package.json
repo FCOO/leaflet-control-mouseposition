@@ -1,8 +1,8 @@
 {
   "name": "leaflet-control-mouseposition",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "homepage": "https://github.com/FCOO/leaflet-control-mouseposition",
-  "author": "NielsHolt niels@steenbuchholt.dk",
+  "author": "NielsHolt nho@fcoo.dk",
   "description": "package.json is only use for building the package. see bower.json for more info",
   "repository": {
     "type": "git",
@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "grunt": "^1.0.0",
-    "grunt-fcoo-grunt-plugin": "^2.0.0"
+    "grunt-fcoo-grunt-plugin": "^4.0.0"
   },
   "license": "MIT"
 }
